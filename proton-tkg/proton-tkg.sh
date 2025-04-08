@@ -335,7 +335,9 @@ function build_vkd3d {
   cd vkd3d-proton
   git reset --hard HEAD
   git clean -xdf
-  git pull origin master
+  git fetch origin
+  git checkout wmma-sandbox
+  git pull origin wmma-sandbox
   git submodule update --init --recursive
 
   if [ "$_bump_dxil_spirv" = "true" ]; then
